@@ -22,10 +22,8 @@ public class NewAddressSteps {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2L));
         driver.get("https://mystore-testlab.coderslab.pl");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2L));
         WebElement signInBtn = driver.findElement(By.className("user-info"));
         signInBtn.click();
-
     }
 
     @When("I log in with my email and password")
@@ -37,22 +35,20 @@ public class NewAddressSteps {
     }
 
     @And("I navigate to the addresses section")
-    public void iNavigateToTheAddressesSection() {WebElement addressesLink = driver.findElement(By.xpath("//a[contains(text(), 'Addresses')]"));
+    public void iNavigateToTheAddressesSection() {
+        WebElement addressesLink = driver.findElement(By.xpath("//a[contains(text(), 'Addresses')]"));
         addressesLink.click();
-
     }
 
-    @And("I select the {string} option")
-    public void iSelectTheOption(String arg0) {
+    @And("I select the \"Create new address\" option")
+    public void iSelectTheOption() {
         driver.findElement(By.xpath("//*[contains(text(), \"Create new address\")]")).click();
     }
 
-
     @And("I create new address using {string} alias, {string} address, {string} city, {string} zipCode, {string} phone")
-    public void newAddressSheetInputs(String alias, String address, String city, String zipCode, String phone) {driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2L));
+    public void newAddressSheetInputs(String alias, String address, String city, String zipCode, String phone) {
         WebElement aliasInput = driver.findElement(By.id("field-alias"));
         aliasInput.sendKeys(alias);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2L));
         WebElement addressInput = driver.findElement(By.id("field-address1"));
         addressInput.sendKeys(address);
         WebElement cityInput = driver.findElement(By.id("field-city"));
@@ -77,7 +73,6 @@ public class NewAddressSteps {
 
     @And("Checking if {string} expectedAlias, {string} expectedAddress, {string} expectedCity, {string} expectedZipCode, {string} expectedPhone")
     public void fieldsAreEntered(String expectedAlias, String expectedAddress, String expectedCity, String expectedZipCode, String expectedPhone) {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         driver.get("https://mystore-testlab.coderslab.pl/index.php?controller=addresses");
         WebElement newAddress = driver.findElement(By.cssSelector("#address-5124 > div.address-body > address"));
         String newAddressField = newAddress.getText();

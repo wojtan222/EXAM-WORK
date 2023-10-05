@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a9e45f3-a225-424b-8797-e7dab6b97162" name="Changes" comment="">
+    <list default="true" id="7a9e45f3-a225-424b-8797-e7dab6b97162" name="Changes" comment="Create README.wc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/coderslab/shop/NewAddressSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/coderslab/shop/NewAddressSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/coderslab/shop/NewAddressTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/coderslab/shop/NewAddressTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,14 +30,14 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/CodersLab/zadanie-2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/CodersLab/EXAM-WORK2"
   }
-}</component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: User can add a new address">
+}]]></component>
+  <component name="RunManager" selected="JUnit.NewAddressTest">
     <configuration name="Scenario: User can add a new address" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/Cucumber/Features/new-address-info.feature" />
@@ -71,10 +73,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NewAddressTest.userOpensWebBrowserAndNavigatesToMainPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EXAM-WORK" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.coderslab.shop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.coderslab.shop" />
+      <option name="MAIN_CLASS_NAME" value="pl.coderslab.shop.NewAddressTest" />
+      <option name="METHOD_NAME" value="userOpensWebBrowserAndNavigatesToMainPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Scenario: User can add a new address" />
         <item itemvalue="JUnit.NewAddressTest" />
+        <item itemvalue="Cucumber Java.Scenario: User can add a new address" />
+        <item itemvalue="JUnit.NewAddressTest.userOpensWebBrowserAndNavigatesToMainPage" />
       </list>
     </recent_temporary>
   </component>
@@ -108,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696507311209</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Create README.wc">
+      <created>1696513792509</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696513792509</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
