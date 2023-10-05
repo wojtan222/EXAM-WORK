@@ -8,7 +8,7 @@ Feature: Address Management
     And I create new address using <keywordAlias> alias, <keywordAddress> address, <keywordCity> city, <keywordZipCode> zipCode, <keywordPhone> phone
     And I can see my new address
     Then  a new address is successfully added
-    And I verify created address through <expectedAlias> expectedAlias, <expectedAddress> expectedAddress, <expectedCity> expectedCity, <expectedZipCode> expectedZipCode, <expectedPhone> expectedPhone
+    And I verify the newly created address details <expectedAlias> expectedAlias, <expectedAddress> expectedAddress, <expectedCity> expectedCity, <expectedZipCode> expectedZipCode, <expectedPhone> expectedPhone
     And I close the web browser
 
     Examples:

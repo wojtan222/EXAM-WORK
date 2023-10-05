@@ -75,7 +75,7 @@ public class NewAddressSteps {
     }
 
 
-    @And("I verify created address through {string} expectedAlias, {string} expectedAddress, {string} expectedCity, {string} expectedZipCode, {string} expectedPhone")
+    @And("I verify the newly created address details {string} expectedAlias, {string} expectedAddress, {string} expectedCity, {string} expectedZipCode, {string} expectedPhone")
     public void iVerifyNewAddressSheet(String expectedAlias, String expectedAddress, String expectedCity, String expectedZipCode, String expectedPhone) {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
