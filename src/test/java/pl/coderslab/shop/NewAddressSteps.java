@@ -9,6 +9,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -66,22 +68,31 @@ public class NewAddressSteps {
 
     @Then("a new address is successfully added")
     public void aNewAddressIsSuccessfullyAdded() {
-        WebElement successAlert = driver.findElement(By.className("alert alert-success"));
-        Assertions.assertTrue(successAlert.isDisplayed(), "Success alert should be visible");
-        Assertions.assertEquals("Address successfully added!", successAlert.getText(), "'Address successfully added'");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement isItGreenAlert = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("alert-success")));
+        String isItGreenAlertText = isItGreenAlert.getText();
+        Assertions.assertEquals("Address successfully added!", isItGreenAlertText, "It should say 'Address successfully added!' ");
     }
 
-    @And("Checking if {string} expectedAlias, {string} expectedAddress, {string} expectedCity, {string} expectedZipCode, {string} expectedPhone")
-    public void fieldsAreEntered(String expectedAlias, String expectedAddress, String expectedCity, String expectedZipCode, String expectedPhone) {
-        driver.get("https://mystore-testlab.coderslab.pl/index.php?controller=addresses");
-        WebElement newAddress = driver.findElement(By.cssSelector("#address-5124 > div.address-body > address"));
-        String newAddressField = newAddress.getText();
-        Assertions.assertTrue(newAddressField.contains(expectedAlias));
-        Assertions.assertTrue(newAddressField.contains(expectedAddress));
-        Assertions.assertTrue(newAddressField.contains(expectedCity));
-        Assertions.assertTrue(newAddressField.contains(expectedZipCode));
-        Assertions.assertTrue(newAddressField.contains(expectedPhone));
+
+    @And("I verify created address through {string} expectedAlias, {string} expectedAddress, {string} expectedCity, {string} expectedZipCode, {string} expectedPhone")
+    public void iVerifyNewAddressSheet(String expectedAlias, String expectedAddress, String expectedCity, String expectedZipCode, String expectedPhone) {
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        WebElement addressField = driver.findElement(By.xpath("//section[@id='wrapper']"));
+        String addressFieldText = addressField.getText();
+
+        Assertions.assertTrue(addressFieldText.contains(expectedAlias));
+        Assertions.assertTrue(addressFieldText.contains(expectedAddress));
+        Assertions.assertTrue(addressFieldText.contains(expectedCity));
+        Assertions.assertTrue(addressFieldText.contains(expectedZipCode));
+        Assertions.assertTrue(addressFieldText.contains(expectedPhone));
+        Assertions.assertTrue(
+                addressFieldText.contains(expectedAlias),
+                "Expected alias not found in the address field."
+        );
     }
+
 
     @And("I close the web browser")
     public void iCloseBrowser() {
